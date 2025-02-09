@@ -1,0 +1,174 @@
+
+header{
+  position: fixed;
+  background-color: #fff;
+  margin-top: -.5rem;
+  top: 0%;
+  left: 0%;
+  z-index: 100;
+  min-height: 8vh;
+  display: flex;
+
+
+}
+.search-comp{
+  position: fixed;
+  top: .5%;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+
+}
+nav{
+  top: 3.5rem;
+  position: fixed;
+  /* -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
+  z-index: 100;
+  transition:transform 0.5s  ease;
+
+
+
+}
+.search-results::-webkit-scrollbar{
+  display: none;
+}
+  nav .navbar{
+    max-width: 200px;
+  }
+
+  .nav-header{
+    position: fixed;
+    z-index: 100;
+  }
+  nav section{
+    padding: 1rem;
+  }
+  
+  nav ul{
+    margin-left: 1rem;
+  }
+  nav ul li{
+    padding: .3rem .5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: .1rem 0;
+    font-size: 20px;
+
+  }
+  nav ul li:hover{
+    background-color: #eee;
+  }
+  nav ul span{
+    margin: 0 .3rem;
+  }
+  .active-nav{
+    color: rgb(38, 38, 209);
+  }
+  .active-nav li{
+    background-color: #d8d8d8;
+
+  }
+  .active-nav li:hover{
+    background-color: #ccc;
+  }
+  .menu-hidden{
+    max-width: max-content;
+
+  }
+
+
+  .menu-hidden ul{
+    margin: 0;
+  }
+  .menu-hidden ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    margin: .3rem 0;
+
+  }
+ .menu-hidden h3{
+    display: none;
+
+  }
+  .menu-hidden section{
+    padding: 0;
+    max-width: max-content;
+  }
+
+  @media screen and (max-width:1500px) {
+    nav .navbar{
+      max-width: 150px;
+    }
+    nav ul{
+      margin: 0;
+    }
+    nav h3{
+    display: none;
+
+    }
+    nav ul li{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: .5rem;
+      margin: .3rem 0;
+    }
+    nav section{
+      padding: 0;
+      max-width: max-content;
+    }
+    
+  }
+
+  @media screen and (max-width:900px){
+    .search-comp{
+      left: 90%;
+    }
+   header{
+    display: flex;
+   }
+  
+  
+  
+    nav{
+      transform: translateX(-200%);
+
+
+    }
+    .menu-hidden{
+      max-width: none;
+      transform: translateX(0);
+
+      z-index: 100;
+
+    }
+    .navbar{
+      background-color: #fff;
+      max-width: none;
+      height: 100vh;
+      width: 50vw;
+      border-right: .5px solid rgb(134, 134, 134);
+ 
+
+    }
+    .nav-header{
+      justify-content: space-between;
+    }
+
+    
+    
+  }
+
+  @media screen and (max-width:600px) {
+    header{
+      flex-direction: column;
+    }
+    nav{
+      top: 2rem;
+    }
+  }
