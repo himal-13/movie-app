@@ -27,14 +27,12 @@ const NavBar = () => {
     </header>
  
     <nav className={`p-2 h-full  ${isHideMenu?'menu-hidden':''}`}>
-
-       
             <div className="navbar">
 
         <section className="">
             <ul className="">
                 <NavLink className={({ isActive }) => (isActive ? 'active-nav' : '')}  to='/'><li ><FontAwesomeIcon icon={faHome}/><span>Home</span> </li></NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'active-nav' : '')} to='/trending'><li ><FontAwesomeIcon icon={faFire}/><span>Trending</span></li></NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'active-nav' : '')} to='/genres'><li ><FontAwesomeIcon icon={faFire}/><span>Genres</span></li></NavLink>
             </ul>
 
         </section>
