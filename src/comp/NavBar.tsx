@@ -19,7 +19,7 @@ const NavBar = () => {
     },[])
   return (
     <>
-    <header className="w-full bg-white justify-between items-center ">
+    <header className="w-full bg-white justify-between items-center pt-1">
 <h2 className=" text-3xl my-2"><FontAwesomeIcon icon={faBars} className={`mx-2 cursor-pointer `} onClick={handleMenuClick} /><Link to='/'><span>MoviesHub</span ></Link></h2>
 <Search/>
 <div className=" hidden sm:block"></div>

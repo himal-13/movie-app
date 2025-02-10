@@ -31,7 +31,6 @@ main{
   overflow: hidden;
   width: 100%;
   position: relative;
-  height: 50vh;
 }
 
 .popular-movies{
@@ -78,24 +77,20 @@ main{
   .movie-details h5{
     display: none;
   }
+ .popular-movies{
+    width: 300%;
+    
+  } 
+
+
+ 
+
+  
+}
+@media screen and (max-width:600px) {
   .popular-movies{
-    width: 500%;
-  }
-  .popular-movies-div{
-    margin: -2rem 0;
-
-  }
-  .popular-movies-div h1{
-    font-size: 2rem;
-  }
-  .p-movie{
-    width: 33%;
-  }
-
-  .p-movie img{
-    height: 60%;
-  }
-
-
+    width: 400%;
+    
+  } 
   
 }

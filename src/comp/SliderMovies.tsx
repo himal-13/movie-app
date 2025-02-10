@@ -30,7 +30,7 @@ const SliderMovies = ({ movies,text }: SliderMoviesProps) => {
 
 
   return (
-    <div className=" w-full mt-5  overflow-hidden popular-movies-div">
+    <div className=" w-full mt-5 h-[250px] sm:h-[250px] md:h-[300px]  overflow-hidden">
       <div className="w-full flex justify-between my-4">
         <h1 className="text-2xl sm:text-4xl ">{text}</h1>
         <div>

@@ -126,8 +126,8 @@ function App() {
       <h2 className='text-3xl my-4'>Upcoming Movies</h2>
 
       <section className='mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 w-[80vw] gap-2 overflow-hidden'>
-        {homeMovies.slice(0,page).map((movie)=>(
-          <Link to={`/movie/${movie.id}`}>
+        {homeMovies && homeMovies.slice(0,page).map((movie)=>(
+          <Link to={`/movie/${movie.id}`} key={movie.id}>
           <div className="border-[.1px] border-gray-300" key={movie.id}>
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
             <h3 className='text-nowrap overflow-hidden'>{movie.title}</h3>
