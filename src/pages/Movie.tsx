@@ -113,7 +113,6 @@ const Movie = () => {
             <p className="sm:my-4 sm:text-xl text-sm h-36 sm:h-auto overflow-y-hidden sm:overflow-auto">{movie.overview}</p>
             <div className="  ">
               <section className="cursor-pointer text-4xl">
-
               <FontAwesomeIcon icon={faHeart} className={isFavorite(movie.id)?'text-red-600':'text-white'} onClick={()=>handleFavClick()}/> 
               </section>
            {!ratedMovies.some(movi=>movi.movie===movie)?  <section className="">

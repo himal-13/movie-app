@@ -31,7 +31,7 @@ export interface Movie {
 function App() {
   const[isLoading,setIsLoading] = useState(true);
   const[error,setError]= useState(null)
-  const[movies,setMovies] = useState<Movie[]>([])
+  const[homeMovies,setHomeMovies] = useState<Movie[]>([])
   const[upComingMovies,setUpcomingMovies] = useState<Movie[]>([])
   const[sliderMovies,setSliderMovies] = useState<Movie[]>([])
   const[currentSliderIndex,setSliderIndex] = useState(0)
@@ -52,7 +52,7 @@ function App() {
       }
     });
 
-      setMovies(response.data.results);
+      setHomeMovies(response.data.results);
   }
 
 
@@ -126,9 +126,9 @@ function App() {
       <h2 className='text-3xl my-4'>Upcoming Movies</h2>
 
       <section className='mx-auto grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 w-[80vw] gap-2 overflow-hidden'>
-        {movies.slice(0,page).map((movie)=>(
+        {homeMovies.slice(0,page).map((movie)=>(
           <Link to={`/movie/${movie.id}`}>
-          <div className="" key={movie.id}>
+          <div className="border-[.1px] border-gray-300" key={movie.id}>
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
             <h3 className='text-nowrap overflow-hidden'>{movie.title}</h3>
             <article className='flex justify-between w-11/12 px-2'>
@@ -136,14 +136,13 @@ function App() {
             <span>{movie.vote_average.toFixed(1)}</span>
             </article>
 
-
           </div></Link>
         ))}
       </section>
       {
-        page < movies.length && (
+        page < homeMovies.length && (
           <section className='py-4 relative'>
-            <button type='button' className='rounded-lg px-4 py-2 bg-slate-300 md:text-3xl absolute left-1/2 -translate-x-1/2' onClick={()=>setPage(page+5)}>Load more</button>
+            <button type='button' className='rounded-lg px-4 py-2 bg-blue-200 md:text-xl absolute left-1/2 -translate-x-1/2' onClick={()=>setPage(page+5)}>Load more</button>
           </section>
         )
       }

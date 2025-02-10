@@ -1,8 +1,5 @@
-import {  faHeart} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import { Movie } from '../App'
-import { useFavorites } from '../services/context'
 
 interface MovieType {
     movie:Movie
@@ -11,42 +8,22 @@ interface MovieType {
 
 const SliderMovi = ({movie}:MovieType) => {
 
-  const {addFavorite,isFavorite,removeFavorite}= useFavorites();
-
-
-
-  const toggleFavorite =()=>{
-    const favorite = isFavorite(movie.id)
-    if(favorite){
-      removeFavorite(movie.id)
-
-    }else{
-      addFavorite(movie)
-    }
-
- };
   return (
-    <div
-    className="max-w-1/5 overflow-hidden p-movie "
+  <Link to={`/movie/${movie.id}`}>
+  <div className="flex relative flex-col hover:shadow-2xl hover:scale-95 transition-all py-1">
+    <section  className='flex-1' >
+      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}  alt="" />
+    </section>
+    <section className='flex justify-between items-center'>
+      <h4>{movie.title}</h4>
+    </section>
+    <section className='absolute flex justify-between p-1 w-full text-xs text-white'>
+      <span className='p-1 bg-purple-800/60 rounded-md '>{movie.release_date.substring(0, 4)}</span>
+      <span className='p-1 bg-purple-800/60 rounded-md '>{movie.vote_average.toFixed(1)}</span>
+    </section>
 
-    key={movie.id}
-  >
-    <Link to={`/movie/${movie.id}`}>
-    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="h-1/2 sm:h-3/4 hover:opacity-70" width="100%" alt="" />
-    </Link>
-    <h4 className=" xl:text-xl text-nowrap ">{movie.title}</h4>
-    <div className="flex justify-between  text-violet-700 font-bold sm:px-4 ">
-        <h3 className="flex gap-1"><span className="">{movie.release_date.substring(0, 4)}</span>
-    <span className="hidden md:block"> | </span>
-    <span className="hidden md:block">{movie.vote_average.toFixed(1)}</span>
-    </h3>
-    <div className="flex gap-2">
-      <span className='hidden xl:block'>{isFavorite(movie.id)?'Remove':'Add to'}</span>
-    <FontAwesomeIcon icon= {faHeart} className={`sm:text-2xl text-xl cursor-pointer ${isFavorite(movie.id)?'text-red-600':'text-black'}`} onClick={toggleFavorite}/>
-    {/* <FontAwesomeIcon icon={faMinus} className="sm:text-2xl text-black cursor-pointer hidden sm:block"/> */}
-    </div>
-        </div>
   </div>
+  </Link>
   )
 }
 

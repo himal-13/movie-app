@@ -31,17 +31,15 @@ main{
   overflow: hidden;
   width: 100%;
   position: relative;
+  height: 50vh;
 }
 
 .popular-movies{
-  width: 400%;
+  width: 250%;
   transition: all .5s ease-out;
-  max-height: 45vh;
 
 }
-.p-movie{
-  width: 19%;
-}
+
 
  .favorite-main{
   max-height: 100vh;
